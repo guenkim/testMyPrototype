@@ -20,6 +20,7 @@ public class UserAuditorAware implements AuditorAware<String> {
         if (authentication == null || !authentication.isAuthenticated()) {
             return Optional.empty();
         }
+        System.out.println("서버수정");
 
         User user = (User)authentication.getPrincipal();
         String auditor = UUID.fromString(user.getUsername()).toString();
