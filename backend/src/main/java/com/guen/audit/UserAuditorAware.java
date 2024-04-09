@@ -15,7 +15,7 @@ public class UserAuditorAware implements AuditorAware<String> {
     @Override
     public Optional<String> getCurrentAuditor() {
         AbstractAuthenticationToken authentication  = (UsernamePasswordAuthenticationToken)SecurityContextHolder.getContext().getAuthentication();
-        System.out.println("line-서버변경");
+        System.out.println("서버수정");
 
         if (authentication == null || !authentication.isAuthenticated()) {
             return Optional.empty();
