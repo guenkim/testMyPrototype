@@ -21,6 +21,7 @@ public class UserAuditorAware implements AuditorAware<String> {
         }
         System.out.println("서버");
 
+
         User user = (User)authentication.getPrincipal();
         String auditor = UUID.fromString(user.getUsername()).toString();
 
