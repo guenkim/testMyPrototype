@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "e4c0586e-aac7-4aee-a113-dfcfec511b59",
+		"name": "todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8783307"
+	},
+	"item": [
+		{
+			"name": "로그인",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"account\": \"user\",\r\n  \"password\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/sign-in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo 저장",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhNGEwMmRkMi0yYjhjLTRmMWUtYjIwMi1hZTE0ZTMwNmNkZjQ6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDY4NTk4MjEsImV4cCI6MTcwNjg2MTYyMX0.0SY2ns284OSssaUo4H6RnRZIyTYM1HGnCqKEfm1vJp55seMQwehsvaVze6EryvWU3aZ8XqNdWanJB3ZcrQ8lTg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "todoReq",
+							"value": "{\n  \"subject\": \"썅!!!!\",\n  \"body\": \"내용\",\n  \"completed\": \"FALSE\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/kimgu/Documents/test.pdf"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/kimgu/Documents/실전! 스프링 데이터 JPA - v2023-06-23.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo 목록 조회",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhNGEwMmRkMi0yYjhjLTRmMWUtYjIwMi1hZTE0ZTMwNmNkZjQ6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDY4NjY1MjcsImV4cCI6MTcwNjg2ODMyN30.CyWW2ZUVHZVdfinAzSxukGCcQCnL8dseK7m3FKMvqxDPHs03ZJ-GO4oE7XRfSCYpcwNc10_Ij-87uK1pGO6OyQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/todos?subject=&page=1&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"todos"
+					],
+					"query": [
+						{
+							"key": "subject",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo 조회",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhNGEwMmRkMi0yYjhjLTRmMWUtYjIwMi1hZTE0ZTMwNmNkZjQ6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDY4NjE2NDQsImV4cCI6MTcwNjg2MzQ0NH0.3-ii5UWBBonVtW7ieiKPwPLiZqF6H2xbAifCPulaBWbC15sZTwlq_9QUWKQnmhwC0HoAY2qLpiScc-DaRkLCAw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/todos/758",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"todos",
+						"758"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo 수정",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhNGEwMmRkMi0yYjhjLTRmMWUtYjIwMi1hZTE0ZTMwNmNkZjQ6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDY4NjE2NDQsImV4cCI6MTcwNjg2MzQ0NH0.3-ii5UWBBonVtW7ieiKPwPLiZqF6H2xbAifCPulaBWbC15sZTwlq_9QUWKQnmhwC0HoAY2qLpiScc-DaRkLCAw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "todoReq",
+							"value": "{\n  \"subject\": \"김근 수정\",\n  \"body\": \"내용\",\n  \"completed\": \"FALSE\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/kimgu/Documents/실전! Querydsl v2023-05-26.pdf"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/kimgu/Documents/새 텍스트 문서.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/todos/757",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"todos",
+						"757"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo 삭제",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhNGEwMmRkMi0yYjhjLTRmMWUtYjIwMi1hZTE0ZTMwNmNkZjQ6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDY4NjE2NDQsImV4cCI6MTcwNjg2MzQ0NH0.3-ii5UWBBonVtW7ieiKPwPLiZqF6H2xbAifCPulaBWbC15sZTwlq_9QUWKQnmhwC0HoAY2qLpiScc-DaRkLCAw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/todos/757",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"todos",
+						"757"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TODO 완료여부 설정",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": false,
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"insecureHTTPParser": true,
+				"disableCookies": false,
+				"tlsPreferServerCiphers": false,
+				"disableUrlEncoding": false,
+				"followRedirects": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhNGEwMmRkMi0yYjhjLTRmMWUtYjIwMi1hZTE0ZTMwNmNkZjQ6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDY4NzE2MTIsImV4cCI6MTcwNjg3MzQxMn0.gAO-WX1w3GpMlCfOnO5VLNks-dThGWpXR5wXwmQzRUyBi15Cq9d2vwfzirUcv2NnDBUpq5oPcp0H5BAaPQEObA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/todos/758/TRUE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"todos",
+						"758",
+						"TRUE"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "21c3c042-0010-46e7-a9d1-bcf848435edf",
+		"name": "shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8783307"
+	},
+	"item": [
+		{
+			"name": "회원생성",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"김근\",\r\n  \"city\": \"서울\",\r\n  \"street\": \"망원\",\r\n  \"zipcode\": \"122333\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/crew",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"crew"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "회원목록반환",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/crews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"crews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "카테고리생성",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"중국주식\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "카테고리목록반환",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "아이템생성",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"그랩*200\",\r\n  \"price\": 10000000,\r\n  \"stockQuanitty\": 99999999,\r\n  \"batType\": \"STOCK\",\r\n  \"ticker\": \"GRAB\",\r\n  \"company\": \"BITCOIN\",\r\n  \"categories\": [\r\n    {\r\n      \"id\": 5\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "아이템목록반환",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "아이템반환",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/items/52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"items",
+						"52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "아이템 수정",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"바이두*300\",\r\n  \"price\": 90000000,\r\n  \"stockQuanitty\": 99999999,\r\n  \"batType\": \"STOCK\",\r\n  \"ticker\": \"BIDU\",\r\n  \"company\": \"BITCOIN\",\r\n  \"categories\": [\r\n    {\r\n      \"id\": 52\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/items/52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"items",
+						"52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "아이템 삭제",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/items/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"items",
+						"53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "주문생성",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/order?crewId=1&itemId=3&count=99999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"order"
+					],
+					"query": [
+						{
+							"key": "crewId",
+							"value": "1"
+						},
+						{
+							"key": "itemId",
+							"value": "3"
+						},
+						{
+							"key": "count",
+							"value": "99999"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "주문 목록 반환",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/orders?crewId=1&orderStatus=ORDER",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "crewId",
+							"value": "1"
+						},
+						{
+							"key": "orderStatus",
+							"value": "ORDER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "주문취소",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MzM4Yjk0MC1jOWIwLTQ1ZTktYWNkOS00YTVjOTVmYjdhYjA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDk2ODE1MTIsImV4cCI6MTcwOTY4MzMxMn0.5nyGhB8zP_z4gPMby6fsZ7DJ8zMfZdCFn21xnR0OoxK4Xq5_wKygzScfadPc5cmMd3iPrLam1bp7tttMmjTNpQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/orders/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"orders",
+						"53"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

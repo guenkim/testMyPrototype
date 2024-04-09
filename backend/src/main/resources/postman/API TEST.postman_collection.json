@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "065223a5-aede-4781-86bb-5e732aef22ae",
+		"name": "API TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8783307"
+	},
+	"item": [
+		{
+			"name": "복잡한 JSON DATA 전송",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiMDgwMTViNy00ZjEyLTQ0MjAtOTQ4My0yNGFhZWIxYWEwZDA6VVNFUiIsImlzcyI6ImdldW4iLCJpYXQiOjE3MDcyMDgxNjksImV4cCI6MTcwNzIwOTk2OX0.fMZMRZoKc7680EpxLBJYLqvG5a7IDuyULlhkPRV7ytvMffJZaaO3Hh5q8itZ8Gos4-5O6okIaExMIUx3VHXQFw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"buyer\": {\r\n        \"id\": \"kkaddus@naver.com\"\r\n    },\r\n    \"items\": [\r\n        {\r\n            \"id\": \"food1\",\r\n            \"count\": 2\r\n        },\r\n        {\r\n            \"id\": \"books1\",\r\n            \"count\": 1\r\n        }\r\n    ],\r\n    \"coupons\": [\r\n        {\r\n            \"id\": \"coupon1\",\r\n            \"count\": 1\r\n        },\r\n        {\r\n            \"id\": \"coupon2\",\r\n            \"count\": 1\r\n        }\r\n    ],\r\n    \"deliveries\": [\r\n        {\r\n            \"address\": \"mangwon1\",\r\n            \"priority\": \"1\"\r\n        },\r\n        {\r\n            \"address\": \"gongrueng\",\r\n            \"priority\": \"2\"\r\n        }\r\n    ],\r\n    \"buyDate\": \"2024-02-06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api2/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api2",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

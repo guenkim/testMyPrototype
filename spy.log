@@ -1,0 +1,282 @@
+[statement] | 5 ms | 
+    select
+        *       
+    from
+        all_sequences
+[statement] | 1 ms | create global temporary table HTE_todo(id number(19,0), body clob, completed varchar2(5 char), created_by varchar2(255 char), moddt timestamp(6), modified_by varchar2(255 char), regdt timestamp(6), subject varchar2(100 char), rn_ number(10,0) not null, primary key (rn_)) on commit delete rows
+[statement] | 1 ms | create global temporary table HTE_files(id number(19,0), filename varchar2(100 char), moddt timestamp(6), regdt timestamp(6), todo_id number(19,0), rn_ number(10,0) not null, primary key (rn_)) on commit delete rows
+[statement] | 1 ms | 
+    drop table files cascade constraints
+[statement] | 1 ms | 
+    drop table crew cascade constraints
+[statement] | 1 ms | 
+    drop table member_refresh_token cascade constraints
+[statement] | 1 ms | 
+    drop table todo cascade constraints
+[statement] | 1 ms | 
+    drop sequence files_seq
+[statement] | 1 ms | 
+    drop sequence todo_seq
+[statement] | 2 ms | create sequence files_seq start with 1 increment by 50
+[statement] | 1 ms | create sequence todo_seq start with 1 increment by 50
+[statement] | 16 ms | 
+    
+    
+    create table files (
+       id number(19,0) not null,
+        moddt timestamp(6),
+        regdt timestamp(6),
+        filename varchar2(100 char) not null,
+        todo_id number(19,0),
+        primary key (id)
+    )
+[statement] | 18 ms | 
+    
+    
+    create table crew (
+       id raw(16) not null,
+        account varchar2(255 char) not null,
+        age number(10,0),
+        created_at timestamp(6),
+        name varchar2(255 char),
+        password varchar2(255 char) not null,
+        type varchar2(255 char),
+        primary key (id)
+    )
+[statement] | 15 ms | 
+    
+    
+    create table member_refresh_token (
+       member_id raw(16) not null,
+        refresh_token varchar2(255 char),
+        reissue_count number(10,0) not null,
+        primary key (member_id)
+    )
+[statement] | 24 ms | 
+    
+    
+    create table todo (
+       id number(19,0) not null,
+        created_by varchar2(255 char),
+        moddt timestamp(6),
+        modified_by varchar2(255 char),
+        regdt timestamp(6),
+        body clob,
+        completed varchar2(5 char) not null,
+        subject varchar2(100 char) not null,
+        primary key (id)
+    )
+[statement] | 7 ms | 
+    
+    
+    alter table crew
+       add constraint UK_d7qqv98p5470l9vjp4j6ytomd unique (account)
+[statement] | 8 ms | 
+    
+    
+    alter table files 
+       add constraint FKavsd6sv8qsl6yckrb0mynnp9r 
+       foreign key (todo_id) 
+       references todo
+[statement] | 13 ms | 
+    
+    
+    alter table member_refresh_token 
+       add constraint FK1dyaxdo0v6l312tk7m85njx0h 
+       foreign key (member_id) 
+       references crew
+[statement] | 1 ms | 
+    /* <criteria> */ select
+        m1_0.id,
+        m1_0.account,
+        m1_0.age,
+        m1_0.created_at,
+        m1_0.name,
+        m1_0.password,
+        m1_0.type       
+    from
+        crew m1_0
+    where
+        m1_0.account='admin'
+[statement] | 2 ms | 
+    /* insert com.guen.program.crew.entity.Member
+        */ insert       
+    into
+        crew (account, age, created_at, name, password, type, id)
+    values
+        ('admin', NULL, '2024-02-07T12:35:36.327+0900', '관리자', '$2a$10$Zuy135sewZEA.rPRLjN4MeEprUw8EYM1bMTvi4Be2i.IElLkeE3/W', 'ADMIN', 'B43DC1DA79044837B2328646E816AC6C')
+[commit] | 0 ms | 
+[statement] | 0 ms | 
+    /* <criteria> */ select
+        m1_0.id,
+        m1_0.account,
+        m1_0.age,
+        m1_0.created_at,
+        m1_0.name,
+        m1_0.password,
+        m1_0.type       
+    from
+        crew m1_0
+    where
+        m1_0.account='user'
+[statement] | 0 ms | 
+    /* insert com.guen.program.crew.entity.Member
+        */ insert       
+    into
+        crew (account, age, created_at, name, password, type, id)
+    values
+        ('user', NULL, '2024-02-07T12:35:36.581+0900', '사용자', '$2a$10$CDJGWUqCL8aLyY/xMr3GiufET4y3WYd3FOCzZQt3fmfrRWpp6sLcS', 'USER', '80F34989992B40ADA4F8F56FFAE28E38')
+[commit] | 1 ms | 
+[statement] | 24 ms | 
+    drop table files cascade constraints
+[statement] | 22 ms | 
+    drop table crew cascade constraints
+[statement] | 19 ms | 
+    drop table member_refresh_token cascade constraints
+[statement] | 25 ms | 
+    drop table todo cascade constraints
+[statement] | 2 ms | 
+    drop sequence files_seq
+[statement] | 2 ms | 
+    drop sequence todo_seq
+[statement] | 2 ms | 
+    select
+        *       
+    from
+        all_sequences
+[statement] | 1 ms | create global temporary table HTE_todo(id number(19,0), body clob, completed varchar2(5 char), created_by varchar2(255 char), moddt timestamp(6), modified_by varchar2(255 char), regdt timestamp(6), subject varchar2(100 char), rn_ number(10,0) not null, primary key (rn_)) on commit delete rows
+[statement] | 0 ms | create global temporary table HTE_files(id number(19,0), filename varchar2(100 char), moddt timestamp(6), regdt timestamp(6), todo_id number(19,0), rn_ number(10,0) not null, primary key (rn_)) on commit delete rows
+[statement] | 1 ms | 
+    drop table files cascade constraints
+[statement] | 1 ms | 
+    drop table crew cascade constraints
+[statement] | 0 ms | 
+    drop table member_refresh_token cascade constraints
+[statement] | 0 ms | 
+    drop table todo cascade constraints
+[statement] | 0 ms | 
+    drop sequence files_seq
+[statement] | 0 ms | 
+    drop sequence todo_seq
+[statement] | 3 ms | create sequence files_seq start with 1 increment by 50
+[statement] | 1 ms | create sequence todo_seq start with 1 increment by 50
+[statement] | 7 ms | 
+    
+    
+    create table files (
+       id number(19,0) not null,
+        moddt timestamp(6),
+        regdt timestamp(6),
+        filename varchar2(100 char) not null,
+        todo_id number(19,0),
+        primary key (id)
+    )
+[statement] | 9 ms | 
+    
+    
+    create table crew (
+       id raw(16) not null,
+        account varchar2(255 char) not null,
+        age number(10,0),
+        created_at timestamp(6),
+        name varchar2(255 char),
+        password varchar2(255 char) not null,
+        type varchar2(255 char),
+        primary key (id)
+    )
+[statement] | 8 ms | 
+    
+    
+    create table member_refresh_token (
+       member_id raw(16) not null,
+        refresh_token varchar2(255 char),
+        reissue_count number(10,0) not null,
+        primary key (member_id)
+    )
+[statement] | 14 ms | 
+    
+    
+    create table todo (
+       id number(19,0) not null,
+        created_by varchar2(255 char),
+        moddt timestamp(6),
+        modified_by varchar2(255 char),
+        regdt timestamp(6),
+        body clob,
+        completed varchar2(5 char) not null,
+        subject varchar2(100 char) not null,
+        primary key (id)
+    )
+[statement] | 8 ms | 
+    
+    
+    alter table crew
+       add constraint UK_d7qqv98p5470l9vjp4j6ytomd unique (account)
+[statement] | 5 ms | 
+    
+    
+    alter table files 
+       add constraint FKavsd6sv8qsl6yckrb0mynnp9r 
+       foreign key (todo_id) 
+       references todo
+[statement] | 8 ms | 
+    
+    
+    alter table member_refresh_token 
+       add constraint FK1dyaxdo0v6l312tk7m85njx0h 
+       foreign key (member_id) 
+       references crew
+[statement] | 1 ms | 
+    /* <criteria> */ select
+        m1_0.id,
+        m1_0.account,
+        m1_0.age,
+        m1_0.created_at,
+        m1_0.name,
+        m1_0.password,
+        m1_0.type       
+    from
+        crew m1_0
+    where
+        m1_0.account='admin'
+[statement] | 2 ms | 
+    /* insert com.guen.program.crew.entity.Member
+        */ insert       
+    into
+        crew (account, age, created_at, name, password, type, id)
+    values
+        ('admin', NULL, '2024-02-07T12:36:21.442+0900', '관리자', '$2a$10$Tusv/hEU3zPvgJFy7WYMKuORLFxEeViZDpUa/eu0TOrLaEU1Pft1W', 'ADMIN', '4F73F3D1AEF9444E8F9D42AE64514328')
+[commit] | 2 ms | 
+[statement] | 0 ms | 
+    /* <criteria> */ select
+        m1_0.id,
+        m1_0.account,
+        m1_0.age,
+        m1_0.created_at,
+        m1_0.name,
+        m1_0.password,
+        m1_0.type       
+    from
+        crew m1_0
+    where
+        m1_0.account='user'
+[statement] | 1 ms | 
+    /* insert com.guen.program.crew.entity.Member
+        */ insert       
+    into
+        crew (account, age, created_at, name, password, type, id)
+    values
+        ('user', NULL, '2024-02-07T12:36:21.581+0900', '사용자', '$2a$10$0XuTXimlA72zEMMwADMX3OBZ0Syc.iP.AOLgPPDrURlMt3iNNsM1m', 'USER', '4E05595220994C54B8293252F82A7D82')
+[commit] | 0 ms | 
+[statement] | 18 ms | 
+    drop table files cascade constraints
+[statement] | 17 ms | 
+    drop table crew cascade constraints
+[statement] | 14 ms | 
+    drop table member_refresh_token cascade constraints
+[statement] | 24 ms | 
+    drop table todo cascade constraints
+[statement] | 2 ms | 
+    drop sequence files_seq
+[statement] | 2 ms | 
+    drop sequence todo_seq

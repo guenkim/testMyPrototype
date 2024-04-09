@@ -1,0 +1,12 @@
+.idea/
+
+### spring boot ###
+# Maven
+target/
+
+# Maven Wrapper
+.mvn/
+backend/HELP.md
+backend/mvnw
+backend/mvnw.cmd
+
