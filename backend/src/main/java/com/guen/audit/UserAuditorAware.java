@@ -15,12 +15,11 @@ public class UserAuditorAware implements AuditorAware<String> {
     @Override
     public Optional<String> getCurrentAuditor() {
         AbstractAuthenticationToken authentication  = (UsernamePasswordAuthenticationToken)SecurityContextHolder.getContext().getAuthentication();
-        System.out.println("서버수정");
-
+        System.out.println("서버");
         if (authentication == null || !authentication.isAuthenticated()) {
             return Optional.empty();
         }
-        System.out.println("서버수정");
+        System.out.println("서버");
 
         User user = (User)authentication.getPrincipal();
         String auditor = UUID.fromString(user.getUsername()).toString();
